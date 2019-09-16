@@ -36,8 +36,8 @@ class Playlister(object):
         if not os.path.exists(os.path.dirname(self.CRED_PATH)):
             os.mkdir(os.path.dirname(self.CRED_PATH))
 
-        if not self.mb.oauth_login(Mobileclient.FROM_MAC_ADDRESS, oauth_credentials="/home/carlos/.wmbr/cred"):
-            self.mb.perform_oauth(storage_filepath="/home/carlos/.wmbr/cred")
+        if not self.mb.oauth_login(Mobileclient.FROM_MAC_ADDRESS, oauth_credentials=self.CRED_PATH):
+            self.mb.perform_oauth(storage_filepath=self.CRED_PATH)
          
 
     def playlist_visitor(self, lonk):
